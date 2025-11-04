@@ -4,7 +4,7 @@
     "require": {
         "php": ">=8.2",
         "spatie/laravel-model-info": "^2.0",
-        "laravel/framework": "^11.0",
+        "laravel/framework": "^10|^11|^12",
         "spatie/laravel-data": "^4.8",
         "spatie/laravel-package-tools": "^1.16"
     },
