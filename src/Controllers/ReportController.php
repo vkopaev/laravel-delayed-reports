@@ -51,18 +51,9 @@ class ReportController extends Controller
 
     public function download(Request $request)
     {
-        $payload = [];
-        foreach ($request->all() as $key => $value) {
-            if(str_contains($key, 'payload[')) {
-                $clear_key = str_replace(']','',str_replace('payload[', '', $key));
-                $payload[$clear_key] = $value;
-            }
-        }
-        //return $payload;
-        //$type = array_values(array_filter(config('type.report'), fn(string $type): bool => basename($type) == $request->input('type')))[0];
+        $payload = $request->input('payload');
         $request_type = $request->input('type');
         $type = (new TypeCollection('report'))->$request_type;
-        //$request->validate($type::rules());
         $valide = Validator::make([
             'payload' => $payload
         ], $type::rules());
