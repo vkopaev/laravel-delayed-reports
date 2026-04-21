@@ -77,7 +77,7 @@ class ReportData extends Form
             "execute_at" => ['date', 'after:now']
         ];
     }
-    public static function fields(string $type): array
+    public static function fields($type = null): array
     {
         return [
 
