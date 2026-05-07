@@ -67,7 +67,7 @@ class ReportData extends Form
         }
     }
     public static string $model = Report::class;
-    public static function rules(ValidationContext $context)
+    public static function rules(?ValidationContext $context = null)
     {
         //
         return [
@@ -77,7 +77,7 @@ class ReportData extends Form
             "execute_at" => ['date', 'after:now']
         ];
     }
-    public static function fields($type = null): array
+    public static function fields(...$args): array
     {
         return [
 
