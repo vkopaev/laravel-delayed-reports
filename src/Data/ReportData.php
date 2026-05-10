@@ -79,6 +79,7 @@ class ReportData extends Form
     }
     public static function fields(...$args): array
     {
+        $type = $args[0];
         return [
 
             ...$type::fields(),
